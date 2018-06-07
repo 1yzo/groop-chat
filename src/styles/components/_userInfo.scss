@@ -1,0 +1,25 @@
+.userInfo {
+    background: #EEEEEE;
+    display: flex;
+    justify-content: flex-end;
+    height: 4.8rem;
+}
+
+.material-icons {
+    margin: $s-size $s-size $s-size $m-size;
+}
+
+.userInfo--creating {
+    justify-content: space-evenly;
+}
+
+.userInfo--creating > form {
+    display: flex;
+    flex: 1;
+}
+
+// .userInfo--creating > form > input {
+//     flex: 1;
+//     margin: .5rem $s-size;
+//     border: none;
+// }

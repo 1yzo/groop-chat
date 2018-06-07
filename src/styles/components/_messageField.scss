@@ -1,0 +1,20 @@
+// .messageField {
+//     height: 10rem;
+//     display: flex;
+//     height: 4.8rem;
+//     background: #EEEEEE;
+//     flex: 1;
+// }
+
+.messageField > form {
+    display: flex;
+    flex: 1;
+    background-color: #EEEEEE;
+}
+
+.messageField__input {
+    flex: 1;
+    border: none;
+    margin: 0.7rem;
+    padding: $m-size $s-size;
+}

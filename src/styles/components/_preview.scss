@@ -1,0 +1,32 @@
+.preview {
+    display: flex;
+    justify-content: start;
+    border: none;
+    border-bottom: 0.1rem solid gainsboro; 
+    padding-left: $s-size;
+    background: none;
+}
+
+.preview > h1 {
+    border-radius: 50%;
+    padding: $s-size;
+    background: rgba(230, 244, 247, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: $l-size;
+    width: 4.7rem;
+    height: 4.7rem;
+    overflow: hidden;
+    color: $black;
+}
+
+.preview__body  {
+    flex: 1;
+    display: flex;
+}
+
+.preview__body > h3 {
+    margin-top: 3.5rem;
+    color: $black;
+}

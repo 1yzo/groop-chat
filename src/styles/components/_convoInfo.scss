@@ -1,0 +1,21 @@
+.convoInfo {
+    display: flex;
+    height: 4.8rem;
+    background: #EEEEEE;    
+    justify-content: start;
+    align-items: center;
+}
+
+.convoInfo__icon {
+    border-radius: 50%;
+    padding: $s-size;
+    background: $black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1.4rem;
+    height: 1.4rem;
+    overflow: hidden;
+    color: #eeeeee;
+    margin-left: $m-size;
+}

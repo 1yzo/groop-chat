@@ -6,7 +6,7 @@ import AppRouter, { history } from './routers/AppRouter';
 import configureStore from './store/configureStore';
 import { Provider } from 'react-redux';
 import { login, logout } from './actions/auth';
-import firebase, { googleAuthProvider } from './firebase/firebase';
+import  { firebase } from './firebase/firebase';
 
 const store = configureStore();
 
@@ -23,8 +23,6 @@ const renderApp = () => {
         hasRendered = true;        
     }
 };
-
-console.log(googleAuthProvider);
 
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {

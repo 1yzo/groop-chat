@@ -9,13 +9,11 @@ export const history = createHistory();
 
 const AppRouter = (props) => (
     <Router history={history}>
-        <div>
-            <Switch>
-                <Route to="/" component={LoginPage} exact />
-                <Route to="/dashboard" component={CopyApp} />
-                <Route component={NotFoundPage} />
-            </Switch>
-        </div>
+        <Switch>
+            <Route path="/" component={LoginPage} exact />
+            <Route path="/dashboard" component={CopyApp} />
+            <Route component={NotFoundPage} />
+        </Switch>
     </Router>
 );
 

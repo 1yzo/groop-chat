@@ -4,7 +4,6 @@ export default class Preview extends React.Component {
 
     handleClick = () => {
         this.props.setSelected(this.props.name);
-        this.props.setSearchQuery({});
     }
 
     render() {

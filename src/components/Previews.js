@@ -30,10 +30,12 @@ class Previews extends React.Component {
     }
 }
 
-const mapStateToProps = (state) => ({
-    previews: state.users.filter((user) => {
-        return user.name.toLowerCase().includes(state.config.searchQuery.toLowerCase());
+const mapStateToProps = (state) => {
+    return ({
+        previews: state.users.filter((user) => {
+            return user.name.toLowerCase().includes(state.config.searchQuery.toLowerCase());
+        })
     })
-});
+};
 
 export default connect(mapStateToProps)(Previews);

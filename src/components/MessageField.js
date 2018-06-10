@@ -1,11 +1,20 @@
 import React from 'react';
 import TextareaAutosize from 'react-autosize-textarea';
+import { addMessage } from '../actions/messages';
 
 export default class MessageField extends React.Component {
     state = {
         value: ''
     };
 
+    handleKeyDown = (e) => {
+        const message = e.target.value;
+        if (e.keyCode === 13) {
+            addMessage(message);
+            this.setState(() => ({value: ''}));
+        }
+    };
+    
     handleChange = (e) => {
         const value = e.target.value;
         this.setState(() => ({ value }));
@@ -14,7 +23,7 @@ export default class MessageField extends React.Component {
     render() {
         return (
             <div className="messageField">
-                <form>
+                <form onKeyDown={this.handleKeyDown}>
                     <TextareaAutosize
                         className="messageField__input"
                         value={this.state.value}

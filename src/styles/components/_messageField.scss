@@ -18,3 +18,11 @@
     margin: 0.7rem;
     padding: $m-size $s-size;
 }
+
+.messages-display {
+    flex: 1;
+    display: flex;
+    overflow: auto;
+    justify-content: end;
+    flex-direction: column;
+}

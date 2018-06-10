@@ -9,6 +9,7 @@ import { startLogin, startLogout, logout } from './actions/config';
 import { startSetUsers } from './actions/users';
 import  database, { firebase } from './firebase/firebase';
 import LoadingPage from './components/LoadingPage';
+import { startSetMessages } from './actions/messages';
 
 const store = configureStore();
 
@@ -27,6 +28,7 @@ const renderApp = () => {
 };
 
 store.dispatch(startSetUsers());
+store.dispatch(startSetMessages());
 
 window.onbeforeunload = (e) => {
     database.ref(`users/${store.getState().config.uid}`).set(null);
@@ -37,4 +39,6 @@ store.dispatch(startLogin()).then(() => {
     renderApp();
 })
 
-
+firebase.auth().onAuthStateChanged(() => {
+    console.log('changed');
+});

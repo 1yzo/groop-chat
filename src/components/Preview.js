@@ -8,7 +8,7 @@ export default class Preview extends React.Component {
     }
 
     render() {
-        const {name} = this.props;
+        const {name}= this.props;
         const initials = name.split(' ').map((subname) => subname[0]);
 
         return (

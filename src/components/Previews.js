@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles/components/_previews.scss';
 import Preview from './Preview';
+import { connect } from 'react-redux';
 
 const checkIfAnyFound = (arr) => {
     if (arr.length > 0) {
@@ -13,12 +14,12 @@ const checkIfAnyFound = (arr) => {
         );
     }
 };
-
-export default class Previews extends React.Component {
+ 
+class Previews extends React.Component {
     render() {
         const previews = this.props.previews.map((preview) => <Preview 
-                                                                key={preview}
-                                                                name={preview}
+                                                                key={preview.uid}
+                                                                name={preview.name}
                                                                 setSelected={this.props.setSelected}
                                                                 setSearchQuery={this.props.setSearchQuery}
                                                                 />);
@@ -35,3 +36,9 @@ export default class Previews extends React.Component {
         );
     }
 }
+
+const mapStateToProps = (state) => ({
+    previews: state.users
+});
+
+export default connect(mapStateToProps)(Previews);

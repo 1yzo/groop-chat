@@ -1,8 +1,14 @@
-import { firebase, googleAuthProvider } from '../firebase/firebase';
+import { firebase } from '../firebase/firebase';
+import { startAddUser } from './users';
 
 export const startLogin = () => {
-    return () => {
-        return firebase.auth().signInWithPopup(googleAuthProvider);
+    return (dispatch) => {
+        return firebase.auth().signInAnonymously().then((userCredential) => {
+            dispatch(startAddUser({
+                uid: userCredential.uid,
+                name: userCredential.uid
+            }));
+        });
     };
 };
 

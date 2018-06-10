@@ -5,8 +5,9 @@ import './styles/styles.scss';
 import AppRouter, { history } from './routers/AppRouter';
 import configureStore from './store/configureStore';
 import { Provider } from 'react-redux';
-import { login, logout } from './actions/auth';
-import  { firebase } from './firebase/firebase';
+import { startLogin, startLogout, logout } from './actions/auth';
+import { startSetUsers } from './actions/users';
+import  database, { firebase } from './firebase/firebase';
 
 const store = configureStore();
 
@@ -24,19 +25,13 @@ const renderApp = () => {
     }
 };
 
-firebase.auth().onAuthStateChanged((user) => {
-    if (user) {
-        store.dispatch(login(user.uid));
-        renderApp();
-        if (history.location.pathname === '/') {
-            history.push('/dashboard');
-        }
-    } else {
-        store.dispatch(logout());
-        renderApp();
-        history.push('/');
-    }
-  });
-  
+store.dispatch(startSetUsers());
+window.onbeforeunload = (e) => {
+    database.ref(`users/${store.getState().auth.uid}`).set(null);
+};
+
+store.dispatch(startLogin()).then(() => {
+    renderApp();
+})
 
 

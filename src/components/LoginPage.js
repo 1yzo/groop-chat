@@ -1,5 +1,5 @@
 import React from 'react';
-import { startLogin } from '../actions/auth';
+import { startLogin } from '../actions/config';
 import { connect } from 'react-redux';
 
 const LoginPage = (props) => {

@@ -5,9 +5,10 @@ import './styles/styles.scss';
 import AppRouter, { history } from './routers/AppRouter';
 import configureStore from './store/configureStore';
 import { Provider } from 'react-redux';
-import { startLogin, startLogout, logout } from './actions/auth';
+import { startLogin, startLogout, logout } from './actions/config';
 import { startSetUsers } from './actions/users';
 import  database, { firebase } from './firebase/firebase';
+import LoadingPage from './components/LoadingPage';
 
 const store = configureStore();
 
@@ -26,10 +27,12 @@ const renderApp = () => {
 };
 
 store.dispatch(startSetUsers());
+
 window.onbeforeunload = (e) => {
-    database.ref(`users/${store.getState().auth.uid}`).set(null);
+    database.ref(`users/${store.getState().config.uid}`).set(null);
 };
 
+ReactDOM.render(<LoadingPage />, document.getElementById('app'));
 store.dispatch(startLogin()).then(() => {
     renderApp();
 })

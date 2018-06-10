@@ -17,28 +17,23 @@ const checkIfAnyFound = (arr) => {
  
 class Previews extends React.Component {
     render() {
-        const previews = this.props.previews.map((preview) => <Preview 
-                                                                key={preview.uid}
-                                                                name={preview.name}
-                                                                setSelected={this.props.setSelected}
-                                                                setSearchQuery={this.props.setSearchQuery}
-                                                                />);
         return (
             <div className="previews">
-                {
-                    typeof this.props.searchQuery === 'string' ? 
-                        checkIfAnyFound(previews.filter((preview) => preview.props.name.toLowerCase().includes(this.props.searchQuery.toLowerCase())))
-                    :
-                        previews
-                }
-        
+                {this.props.previews.map((preview) => <Preview 
+                    key={preview.uid}
+                    name={preview.name}
+                    setSelected={this.props.setSelected}
+                    setSearchQuery={this.props.setSearchQuery}
+                    />)}
             </div>
         );
     }
 }
 
 const mapStateToProps = (state) => ({
-    previews: state.users
+    previews: state.users.filter((user) => {
+        return user.name.toLowerCase().includes(state.config.searchQuery.toLowerCase());
+    })
 });
 
 export default connect(mapStateToProps)(Previews);

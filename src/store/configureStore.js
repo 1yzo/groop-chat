@@ -1,6 +1,6 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
-import authReducer from '../reducers/auth';
+import configReducer from '../reducers/config';
 import messagesReducer from '../reducers/messages';
 import usersReducer from '../reducers/users';
 
@@ -11,7 +11,7 @@ export default () => {
         combineReducers({
             users: usersReducer,
             messages: messagesReducer,
-            auth: authReducer
+            config: configReducer, 
         }),
         composeEnhancers(applyMiddleware(thunk))
     );

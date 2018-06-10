@@ -1,5 +1,5 @@
 import database  from '../firebase/firebase';
-import { login } from './auth';
+import { login } from './config';
 
 // export const addUser = (user) => {
 //     return {

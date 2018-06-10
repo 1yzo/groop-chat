@@ -28,3 +28,8 @@ export const login = (uid) => {
 export const logout = () => ({
     type: 'LOGOUT'
 });
+
+export const setSearchQuery = (searchQuery) => ({
+    type: 'SEARCH',
+    searchQuery
+});

@@ -1,16 +1,13 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { setSearchQuery } from '../actions/config';
 
 class SearchBar extends React.Component {
-
-    state = {
-      value: ''
-    }
-
     handleSubmit = (e) => {
         e.preventDefault();
 
         this.setState(() => ({value: ''}));
-        this.props.setSearchQuery({});
+        this.props.setSearchQuery('');
     }
 
     handleChange = (e) => {
@@ -36,9 +33,9 @@ class SearchBar extends React.Component {
                         className="searchBar__input"
                         placeholder="Search"
                         type="text" 
-                        value={this.state.value}
+                        value={this.props.searchQuery}
                         onChange={this.handleChange}
-                        onBlur={() => this.setState(() => ({value: ''}))}
+                        onBlur={() => this.props.setSearchQuery('')}
                     />
                 </form>
             </div>
@@ -46,4 +43,12 @@ class SearchBar extends React.Component {
     }
 };
 
-export default SearchBar;
+const mapStateToProps = (state) => ({
+    searchQuery: state.config.searchQuery
+});
+
+const mapDispatchToProps = (dispatch) => ({
+    setSearchQuery: (searchQuery) => dispatch(setSearchQuery(searchQuery))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(SearchBar);

@@ -15,7 +15,7 @@ class UserInfo extends React.Component {
     onSubmit =(e) => {
         e.preventDefault();
         if (this.state.value.trim()) {
-            this.props.newConvo(this.state.value)
+            this.props.newConvo(this.state.value);
             this.setState(() => ({value: "", isCreating: false, error: ""}));
             
         } else {

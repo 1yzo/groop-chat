@@ -1,0 +1,15 @@
+.nameSelectPage {
+   height: 100%;
+   display: flex;
+   flex: 1;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+
+   > form > input {
+        text-align: center;
+        font-size: 5rem;
+        border: .3rem solid fade-out(lightsteelblue, .15); 
+        
+   }
+}

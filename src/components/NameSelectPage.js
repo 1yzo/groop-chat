@@ -22,12 +22,13 @@ class NameSelectPage extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="nameSelectPage">
                 <form onSubmit={this.handleSubmit}>
                     <input 
                         type="text" 
                         onChange={this.handleChange} 
-                        value={this.state.value} 
+                        value={this.state.value}
+                        placeholder="Display Name"
                     />
                 </form>
             </div>

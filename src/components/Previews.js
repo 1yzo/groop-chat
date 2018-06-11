@@ -9,7 +9,7 @@ class Previews extends React.Component {
             <div className="previews">
                 {this.props.previews.map((preview) => <Preview 
                     key={preview.uid}
-                    name={this.props.name}
+                    name={preview.name}
                     setSelected={this.props.setSelected}
                     setSearchQuery={this.props.setSearchQuery}
                     />)}

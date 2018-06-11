@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Message = ({ id, content }) => {
-    console.log(content);
     const { author, message: messageText } = content;
     return (
         <div className="message">

@@ -8,8 +8,8 @@ import { Provider } from 'react-redux';
 import { startLogin, startLogout, logout } from './actions/config';
 import { startSetUsers } from './actions/users';
 import  database, { firebase } from './firebase/firebase';
-import LoadingPage from './components/LoadingPage';
 import { startSetMessages } from './actions/messages';
+import NameSelectPage from './components/NameSelectPage';
 
 const store = configureStore();
 
@@ -34,11 +34,4 @@ window.onbeforeunload = (e) => {
     database.ref(`users/${store.getState().config.uid}`).set(null);
 };
 
-ReactDOM.render(<LoadingPage />, document.getElementById('app'));
-store.dispatch(startLogin()).then(() => {
-    renderApp();
-})
-
-firebase.auth().onAuthStateChanged(() => {
-    console.log('changed');
-});
+ReactDOM.render(jsx, document.getElementById('app'));

@@ -1,7 +1,10 @@
 import database from '../firebase/firebase';
 
-export const addMessage = (message) => {
-    database.ref('messages').push(message);
+export const addMessage = (message, author = '') => {
+    return database.ref('messages').push({
+        message,
+        author
+    });
 };
 
 export const setMessages = (messages = []) => ({

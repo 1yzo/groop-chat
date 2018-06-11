@@ -1,6 +1,7 @@
 const defaultState = {
     uid: '',
-    searchQuery: ''
+    searchQuery: '',
+    name: ''
 };
 
 export default (state = defaultState, action) => {
@@ -20,6 +21,11 @@ export default (state = defaultState, action) => {
                 ...state,
                 searchQuery: action.searchQuery
             };
+        case 'SET_NAME':
+            return {
+                ...state,
+                name: action.name
+            }
         default:
             return state;
     }

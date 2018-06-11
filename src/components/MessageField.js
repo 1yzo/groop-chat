@@ -1,8 +1,9 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import TextareaAutosize from 'react-autosize-textarea';
 import { addMessage } from '../actions/messages';
 
-export default class MessageField extends React.Component {
+class MessageField extends React.Component {
     state = {
         value: ''
     };
@@ -11,7 +12,8 @@ export default class MessageField extends React.Component {
         const message = e.target.value;
         if (e.keyCode === 13) {
             e.preventDefault(); 
-            addMessage(message);
+            console.log(this.props.name);
+            addMessage(message, this.props.name);
             this.setState(() => ({value: ''}));
         }
     };
@@ -37,3 +39,13 @@ export default class MessageField extends React.Component {
         );
     }
 }
+
+const mapStateToProps = (state) => ({
+    name: state.config.name
+});
+
+const mapDispatchToProps = (dispatch) => ({
+    addMessage: (message, author) => dispatch(addMessage(message, author))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(MessageField);

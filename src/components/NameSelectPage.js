@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { setName, startLogin } from '../actions/config';
+import Header from './Header';
 
 class NameSelectPage extends React.Component {
     state = {
@@ -22,15 +23,18 @@ class NameSelectPage extends React.Component {
 
     render() {
         return (
-            <div className="nameSelectPage">
-                <form onSubmit={this.handleSubmit}>
-                    <input 
-                        type="text" 
-                        onChange={this.handleChange} 
-                        value={this.state.value}
-                        placeholder="Display Name"
-                    />
-                </form>
+            <div className="container">
+                <Header />
+                <div className="nameSelectPage">
+                    <form onSubmit={this.handleSubmit}>
+                        <input 
+                            type="text" 
+                            onChange={this.handleChange} 
+                            value={this.state.value}
+                            placeholder="Display Name"
+                        />
+                    </form>
+                </div>
             </div>
         );
     }

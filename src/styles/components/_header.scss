@@ -1,6 +1,7 @@
 .header {
     display: flex;
-    background: fade-out(lightsteelblue, .15); 
+    background: fade-out(#55a7dd, 0.5); 
+    color: lightgoldenrodyellow;
     align-items: center;
     padding-left: $m-size;
     height: 10rem;

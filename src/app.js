@@ -5,11 +5,9 @@ import './styles/styles.scss';
 import AppRouter, { history } from './routers/AppRouter';
 import configureStore from './store/configureStore';
 import { Provider } from 'react-redux';
-import { startLogin, startLogout, logout } from './actions/config';
 import { startSetUsers } from './actions/users';
 import  database, { firebase } from './firebase/firebase';
 import { startSetMessages } from './actions/messages';
-import NameSelectPage from './components/NameSelectPage';
 
 const store = configureStore();
 

@@ -19,11 +19,11 @@
     height: 4.7rem;
     overflow: hidden;
     color: white;
-    transition: background 300ms ease-in-out;
+    transition: border-radius 200ms ease-in-out;
 }
 
 .preview:hover .initial-box {
-    background: darken($blue, 20);
+    border-radius: 25%;
 }
 
 .preview__body  {

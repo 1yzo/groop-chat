@@ -3,28 +3,16 @@ import SideBar from '../components/SideBar';
 import Convo from '../components/Convo';
 import Previews from './Previews';
 import Header from './Header';
+import ExitModal from './ExitModal';
 
 export default class CopyApp extends React.Component {
     state = {
         previews: [],
-        selected: '',
+        selected: ''
     };
 
     setSelected = (selected) => {
         this.setState(() => ({ selected }));
-    }
-
-    componentDidMount() {
-        try {
-            const json = localStorage.getItem('previews');
-            const previews = JSON.parse(json);
-
-            if (previews) {
-                this.setState(() => ({ previews }));
-            }
-        } catch (e) {
-        
-        }
     }
 
     render() {

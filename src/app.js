@@ -28,7 +28,7 @@ const renderApp = () => {
 store.dispatch(startSetUsers());
 store.dispatch(startSetMessages());
 
-window.onbeforeunload = (e) => {
+window.onunload = (e) => {
     database.ref(`users/${store.getState().config.uid}`).set(null);
 };
 

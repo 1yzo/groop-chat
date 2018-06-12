@@ -35,7 +35,7 @@ class MessageField extends React.Component {
                         maxRows={8}
                     />
                     <button className="button">
-                        <i class="material-icons">send</i>
+                        <i className="material-icons">send</i>
                     </button>
                 </form>
             </div>

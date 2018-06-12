@@ -9,6 +9,10 @@ class MessagesDisplay extends React.Component {
         messagesContainer.scrollTop = messagesContainer.scrollHeight + 1;
     }
 
+    componentDidMount() {
+        this.scrollToBottom();
+    }
+    
     componentDidUpdate() {
         this.scrollToBottom();
     }

@@ -8,7 +8,6 @@ class Previews extends React.Component {
         return (
             <div className="previews">
                 {this.props.previews.map((preview) => {   
-                    console.log(preview.uid);
                     return <Preview 
                                 key={preview.uid}
                                 name={preview.name}

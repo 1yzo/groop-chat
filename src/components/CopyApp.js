@@ -3,8 +3,10 @@ import SideBar from '../components/SideBar';
 import Convo from '../components/Convo';
 import Previews from './Previews';
 import Header from './Header';
+import { connect } from 'react-redux';
+import database  from '../firebase/firebase';
 
-export default class CopyApp extends React.Component {
+class CopyApp extends React.Component {
     state = {
         previews: [],
         selected: ''
@@ -12,6 +14,10 @@ export default class CopyApp extends React.Component {
 
     setSelected = (selected) => {
         this.setState(() => ({ selected }));
+    }
+
+    componentDidMount() {
+        database.ref(`users/${this.props.currentUserId}`).onDisconnect().remove();
     }
 
     render() {
@@ -26,3 +32,9 @@ export default class CopyApp extends React.Component {
         );
     }
 }
+
+const mapStateToProps = (state) => ({
+    currentUserId: state.config.uid
+});
+
+export default connect(mapStateToProps)(CopyApp);

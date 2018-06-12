@@ -5,7 +5,6 @@ export const startLogin = () => {
     return (dispatch, getState) => {
         return firebase.auth().signInAnonymously().then((userCredential) => {
             return dispatch(startAddUser({
-                uid: userCredential.uid,
                 name: getState().config.name
             }));
         });

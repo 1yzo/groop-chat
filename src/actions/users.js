@@ -1,18 +1,12 @@
 import database  from '../firebase/firebase';
 import { login } from './config';
 
-// export const addUser = (user) => {
-//     return {
-//         type: 'ADD_USER',
-//         user,
-//         id
-//     };
-// }
-
 export const startAddUser = (user = {}) => {
     return (dispatch) => {
         return database.ref(`users`).push(user).then((ref) => {
-            dispatch(login(ref.key));
+            const uid = ref.key;
+            ref.update({ uid });
+            dispatch(login(uid));
         });
     };
 }

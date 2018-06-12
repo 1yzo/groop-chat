@@ -7,12 +7,14 @@ class Previews extends React.Component {
     render() {
         return (
             <div className="previews">
-                {this.props.previews.map((preview) => <Preview 
-                    key={preview.uid}
-                    name={preview.name}
-                    setSelected={this.props.setSelected}
-                    setSearchQuery={this.props.setSearchQuery}
-                    />)}
+                {this.props.previews.map((preview) =>
+                    {   console.log(preview.uid);
+                        return <Preview 
+                        key={this.props.uid}
+                        name={preview.name}
+                        setSelected={this.props.setSelected}
+                        setSearchQuery={this.props.setSearchQuery}
+                    />})}
             </div>
         );
     }
@@ -23,7 +25,8 @@ const mapStateToProps = (state) => {
         previews: state.users.filter((user) => {
             return user.name.toLowerCase().includes(state.config.searchQuery.toLowerCase());
         }),
-        name: state.config.name
+        name: state.config.name,
+        uid: state.config.uid
     })
 };
 

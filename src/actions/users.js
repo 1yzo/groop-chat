@@ -19,13 +19,7 @@ export const setUsers = (users) => ({
 export const startSetUsers = () => {
     return (dispatch) => {
         return database.ref('users').on('value', (snapshot) => {
-            const users = [];
-
-            snapshot.forEach((childSnapshot) => {
-                users.push(childSnapshot.val());
-            });
-
-            dispatch(setUsers(users));
+            dispatch(setUsers(Object.values(snapshot.val())));
         });
     };
 }

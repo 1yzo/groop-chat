@@ -32,4 +32,5 @@ window.onbeforeunload = (e) => {
     database.ref(`users/${store.getState().config.uid}`).set(null);
 };
 
+
 ReactDOM.render(jsx, document.getElementById('app'));

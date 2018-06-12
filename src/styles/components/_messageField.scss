@@ -23,12 +23,12 @@
 
 .message {
     display: flex;
-    // min-height: 5rem;
+    flex-direction: column;
     flex-shrink: 0;
     padding: $s-size;
-    color: $black;
+    color: gray;
     margin: 0.7rem;
-    background: lightgoldenrodyellow;
+    font-size: 17px;
     box-shadow: 1px 1px 1px 1px rgba(67,38,100,0.15);
     animation: message 300ms ease-in-out 1;
 }
@@ -39,8 +39,10 @@
 }
 
 .message__author {
+    color: $blue;
+    font-weight: bold;
     width: 8rem;
-    margin-right: $s-size;
+    margin-bottom: $s-size;
     word-wrap: break-word;    
 }
 

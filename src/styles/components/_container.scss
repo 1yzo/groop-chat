@@ -1,5 +1,7 @@
 .container {
     min-height: 100%;
     display: flex;
+    flex: 1;
+    overflow: hidden;
     flex-direction: column;
 }

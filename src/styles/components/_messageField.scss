@@ -9,6 +9,9 @@
     border: none;
     margin: 0.7rem;
     padding: $m-size $s-size;
+    @media (min-width: $desktop-breakpoint) {
+        margin-left: 0;
+    }
 }
 
 .messages-display {
@@ -23,7 +26,7 @@
     // min-height: 5rem;
     flex-shrink: 0;
     padding: $s-size;
-    color: #767676;
+    color: $black;
     margin: 0.7rem;
     background: lightgoldenrodyellow;
     box-shadow: 1px 1px 1px 1px rgba(67,38,100,0.15);

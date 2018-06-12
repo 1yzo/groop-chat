@@ -12,7 +12,7 @@ export default class Preview extends React.Component {
 
         return (
             <button className="preview" onClick={this.handleClick}>
-                <h1>{initials}</h1>
+                <h1 className="initial-box">{initials}</h1>
                 <div className="preview__body">
                     <h3>{name}</h3>
                 </div>

@@ -17,6 +17,7 @@ class CopyApp extends React.Component {
     }
 
     componentDidMount() {
+        // Remove user on disconnect
         database.ref(`users/${this.props.currentUserId}`).onDisconnect().remove();
     }
 

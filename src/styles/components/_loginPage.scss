@@ -8,7 +8,7 @@
    font-size: 4rem;
    > form > input {
         text-align: center;
-        border: .3rem solid fade-out(lightsteelblue, .15); 
+        border: .3rem solid #eee; 
    }
    @media (max-width: $desktop-breakpoint) {
        font-size: 2rem;

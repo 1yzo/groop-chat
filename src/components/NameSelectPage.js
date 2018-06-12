@@ -32,6 +32,7 @@ class NameSelectPage extends React.Component {
                             onChange={this.handleChange} 
                             value={this.state.value}
                             placeholder="Display Name"
+                            autoFocus
                         />
                     </form>
                 </div>

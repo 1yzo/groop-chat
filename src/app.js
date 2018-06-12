@@ -28,13 +28,8 @@ const renderApp = () => {
 store.dispatch(startSetUsers());
 store.dispatch(startSetMessages());
 
-// window.onbeforeunload = (e) => {
-//     database.ref(`users/${store.getState().config.uid}`).set(null);
-// };
-
-const currentUserRef = database.ref(`users/${store.getState().config.uid}`);
-firebase.database().ref('.info/connected').on('value', (snap) => {
-    currentUserRef.onDisconnect().remove();
-});
+window.onbeforeunload = (e) => {
+    database.ref(`users/${store.getState().config.uid}`).set(null);
+};
 
 ReactDOM.render(jsx, document.getElementById('app'));

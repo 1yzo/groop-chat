@@ -12,7 +12,6 @@ class MessageField extends React.Component {
         const message = e.target.value;
         if (e.keyCode === 13) {
             e.preventDefault(); 
-            console.log(this.props.name);
             addMessage(message, this.props.name);
             this.setState(() => ({value: ''}));
         }
@@ -34,7 +33,14 @@ class MessageField extends React.Component {
                         placeholder="Message"
                         maxRows={8}
                     />
-                    <button className="button">
+                    <button 
+                        className="button" 
+                        onClick={(e) => {
+                            e.preventDefault();
+                            addMessage(this.state.value, this.props.name);
+                            this.setState(() => ({ value: ''}));
+                        }}
+                    >
                         <i className="material-icons">send</i>
                     </button>
                 </form>

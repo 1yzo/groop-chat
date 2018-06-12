@@ -32,5 +32,7 @@ window.onunload = (e) => {
     database.ref(`users/${store.getState().config.uid}`).set(null);
 };
 
+//database.ref(`users/${store.getState().config.uid}`).onDisconnect().update({ isOnline: false });
+
 
 ReactDOM.render(jsx, document.getElementById('app'));

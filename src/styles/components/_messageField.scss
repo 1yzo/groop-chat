@@ -30,7 +30,7 @@
     margin: 0.7rem;
     font-size: 17px;
     box-shadow: 1px 1px 1px 1px rgba(67,38,100,0.15);
-    animation: message 300ms ease-in-out 1;
+    animation: message 500ms ease-in-out 1;
 }
 
 .message__content {
@@ -44,6 +44,7 @@
     width: 8rem;
     margin-bottom: $s-size;
     word-wrap: break-word;    
+    width: 100%;
 }
 
 @keyframes message {

@@ -1,0 +1,21 @@
+.hamburger-menu {
+    position: absolute;
+    margin: 0;
+    width: 0;
+    transition: all 500ms ease-in-out;
+    white-space: nowrap;
+    opacity: 0;
+    overflow: auto;
+    max-height: 65%;
+}
+
+.hamburger-menu--show {
+    @media (max-width: $desktop-breakpoint) {
+        width: 100%;
+        opacity: 100;
+    }
+}
+
+// .hamburger-menu:hover {
+//     transform: translateX(200%);
+// }

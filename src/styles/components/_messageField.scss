@@ -1,7 +1,21 @@
-.messageField > form {
-    display: flex;
-    flex: 1;
-    background-color: #EEEEEE;
+.messageField {
+    > form {
+        display: flex;
+        flex: 1;
+        background-color: #EEEEEE;
+    }
+}
+
+.messageField--mobile {
+    @media (min-width: $desktop-breakpoint) {
+        display: none;
+    }
+}
+
+.messageField--desktop {
+    @media (max-width: $desktop-breakpoint) {
+        display: none;
+    }
 }
 
 .messageField__input {

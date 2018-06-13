@@ -25,7 +25,7 @@ class MessagesDisplay extends React.Component {
                 {messages.map(([ id, content ]) => {
                     return <Message key={id} id={id} content={content} />
                 })}
-                <div style={{color: 'transparent', fontSize: '6px'}}>hack</div>                
+                <div style={{ color: 'transparent', fontSize: '6px', opacity: 0 }}>hack</div>                
             </div>
         );
     }

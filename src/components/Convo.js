@@ -7,7 +7,9 @@ class Convo extends React.Component {
         return (
             <div className="convo">
                 <MessagesDisplay />
-                <MessageField />
+                <div className="messageField messageField--desktop">
+                    <MessageField />
+                </div>
             </div>
         );
     }

@@ -33,7 +33,7 @@ export const setSearchQuery = (searchQuery) => ({
     searchQuery
 });
 
-export const setName = (name) => ({
+export const setName = (name = '') => ({
     type: 'SET_NAME',
     name
 });

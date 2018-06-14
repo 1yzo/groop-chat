@@ -33,8 +33,8 @@ class CopyApp extends React.Component {
         this.state.showMenu && console.log('clicked');
         return (
             <div className="container" >
-                <div onClick={this.toggleShow}>
-                <Header />
+                <div  onClick={this.toggleShow}>
+                    <Header forMobile={true} />
                 </div>
                 <div className="copyApp">
                     <HamburgerMenu 

@@ -11,3 +11,19 @@
         margin: 0;
     }
 }
+
+.header--mobile {
+    @media (max-width: $desktop-breakpoint) {
+        animation: shrink 300ms ease-in-out 1;
+        animation-fill-mode: forwards;
+    }
+}
+
+@keyframes shrink {
+    0% {
+        // height: 10rem;
+    }
+    100% {
+        height: 7rem;
+    }
+}

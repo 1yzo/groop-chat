@@ -1,14 +1,15 @@
 .hamburger-menu {
-    // position: absolute;
+    position: absolute;
     margin: 0;
-    width: 0;
-    transition: all 500ms ease-in-out;
+    transition: transform 400ms ease-in-out;
     white-space: nowrap;
     overflow: scroll;
+    transform: translateX(-100%);
+    width: 100%;
 }
 
 .hamburger-menu--show {
     @media (max-width: $desktop-breakpoint) {
-        width: 100%;
+        transform: translateX(0);
     }
 }

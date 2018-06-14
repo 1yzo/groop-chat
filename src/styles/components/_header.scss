@@ -14,7 +14,7 @@
 
 .header--mobile {
     @media (max-width: $desktop-breakpoint) {
-        animation: shrink 300ms ease-in-out 1;
+        animation: shrink 400ms ease-in-out 1;
         animation-fill-mode: forwards;
     }
 }

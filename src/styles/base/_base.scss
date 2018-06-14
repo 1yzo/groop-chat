@@ -8,7 +8,6 @@ body {
     font-family: Helvetica, Arial, sans-serif;
     font-size: $m-size;
     height: 100%;
-    overflow-y: hidden;
 }
 
 button {
@@ -25,5 +24,5 @@ button[disabled] {
 }
 
 * {
-    -webkit-overflow-scrolling: touch;
+    -webkit-overflow-scrolling: touch; //for users and messageField
 }

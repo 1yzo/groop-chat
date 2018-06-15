@@ -2,6 +2,7 @@ html {
     font-size: 62.5%;
     height: 100%;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
+    overflow: hidden;
 }
 
 body {
@@ -22,7 +23,3 @@ button[disabled] {
     height: 100%;
     display: flex;
 }
-
-* {
-    -webkit-overflow-scrolling: touch; //for users and messageField
-} 
